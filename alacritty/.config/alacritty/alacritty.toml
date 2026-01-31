@@ -1,0 +1,86 @@
+# ==============================================================================
+# ALACRITTY CONFIGURATION (TOML)
+# Optimized for Fedora + tmux + Caskaydia Nerd Font
+# ==============================================================================
+
+[window]
+# Removes the title bar/header as requested
+decorations = "None"
+# Launch maximized to fill the screen
+startup_mode = "Maximized"
+opacity = 1.0
+padding = { x = 12, y = 12 }
+dynamic_title = false
+
+[font]
+# Exact matches from your fc-list output
+normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
+bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
+italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
+size = 12.0
+
+[font.offset]
+# Adjusting y-offset by 1 provides better vertical breathing room for code
+x = 0
+y = 1
+
+[selection]
+# --- Copy on Select ---
+# Highlighting text automatically copies it to the system clipboard
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+thickness = 0.15
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+# --- Key Bindings (No Shift Required) ---
+[[keyboard.bindings]]
+# Copy with Ctrl+C
+action = "Copy"
+key = "C"
+mods = "Control"
+
+[[keyboard.bindings]]
+# Paste with Ctrl+V
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[[keyboard.bindings]]
+# Optional: remap the interrupt signal to another shortcut, e.g., Ctrl+Shift+C
+key = "C"
+mods = "Control|Shift"
+chars = "\u0003" # \u0003 is the SIGINT character
+
+[[keyboard.bindings]]
+# Toggle Fullscreen (F11 style)
+action = "ToggleFullscreen"
+key = "F"
+mods = "Control|Shift"
+
+# --- Mouse Bindings ---
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[[mouse.bindings]]
+action = "ExpandSelection"
+mouse = "Right"
+
+[hints]
+# Launch URLs with Ctrl+Shift+Left Click
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
+post_processing = true
+regex = "(ipfs:|ipns:|magnets:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+mouse = { enabled = true, mods = "Control|Shift" }
+
+[general]
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
