@@ -42,7 +42,7 @@ return {
     default_global_keymaps = true,
 
     -- Default agent mode (build = full access, plan = read-only analysis)
-    default_mode = "build",
+    default_mode = "plan",
 
     -- Keymap prefix (using <leader>o to avoid conflicts)
     keymap_prefix = "<leader>o",
@@ -192,7 +192,7 @@ return {
       -- Input window settings
       input = {
         text = {
-          wrap = false, -- Text wrapping in input
+          wrap = true, -- Text wrapping in input
         },
       },
 
@@ -221,12 +221,12 @@ return {
       enabled = true, -- Enable automatic context capture
 
       cursor_data = {
-        enabled = false, -- Include cursor position/line
+        enabled = true, -- Include cursor position/line
       },
 
       diagnostics = {
         info = false, -- Include info diagnostics
-        warn = true, -- Include warning diagnostics
+        warn = false, -- Include warning diagnostics
         error = true, -- Include error diagnostics
       },
 
