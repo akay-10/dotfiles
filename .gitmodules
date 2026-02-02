@@ -10,3 +10,6 @@
 [submodule "oh-my-zsh/.oh-my-zsh/custom/plugins/zsh-autocomplete"]
 	path = oh-my-zsh/.oh-my-zsh/custom/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete.git
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
