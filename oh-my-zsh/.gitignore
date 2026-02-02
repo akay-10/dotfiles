@@ -1,0 +1,5 @@
+# Ignore oh-my-zsh base installation
+.oh-my-zsh/*
+# But track the custom directory
+!.oh-my-zsh/custom/
+!.oh-my-zsh/custom/**
