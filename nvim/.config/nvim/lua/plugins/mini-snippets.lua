@@ -47,7 +47,6 @@ return {
                 .. "\n"
                 .. " private:\n"
                 .. "  $1\n"
-                .. "\n"
                 .. " private:\n"
                 .. "  DISALLOW_COPY_AND_ASSIGN(" .. classname .. ");\n"
                 .. "  $2\n"
