@@ -124,6 +124,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 export PATH="$PATH:/home/akayhomie/.cargo/bin"
+export PATH="$PATH:/home/akayhomie/go/bin"
 
 # opencode
 export PATH=/home/akayhomie/.opencode/bin:$PATH
