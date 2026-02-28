@@ -1,5 +1,5 @@
 return {
-  "mini-snippets/mini.snippets",
+  "nvim-mini/mini.snippets",
   opts = function(_, opts)
     local ms = require("mini.snippets")
 
@@ -28,57 +28,85 @@ return {
       return {
         {
           prefix = "cch",
-          desc   = "C++ class header",
-          body   = "#ifndef " .. guard .. "\n"
-                .. "#define " .. guard .. "\n"
-                .. "\n"
-                .. "#include <memory> // shared_ptr\n\n"
-                .. "#include \"basic/basic.h\"\n"
-                .. "\n"
-                .. ns_open .. "\n"
-                .. "\n"
-                .. "class " .. classname .. " {\n"
-                .. " public:\n"
-                .. "  typedef std::shared_ptr<" .. classname .. "> Ptr;\n"
-                .. "  typedef std::shared_ptr<const " .. classname .. "> PtrConst;\n"
-                .. "\n"
-                .. "  " .. classname .. "();\n"
-                .. "  ~" .. classname .. "();\n"
-                .. "\n"
-                .. " private:\n"
-                .. "  $1\n"
-                .. " private:\n"
-                .. "  DISALLOW_COPY_AND_ASSIGN(" .. classname .. ");\n"
-                .. "  $2\n"
-                .. "};\n"
-                .. "\n"
-                .. ns_close .. "\n"
-                .. "\n"
-                .. "#endif // " .. guard,
+          desc = "C++ class header",
+          body = "#ifndef "
+            .. guard
+            .. "\n"
+            .. "#define "
+            .. guard
+            .. "\n"
+            .. "\n"
+            .. "#include <memory> // shared_ptr\n\n"
+            .. '#include "basic/basic.h"\n'
+            .. "\n"
+            .. ns_open
+            .. "\n"
+            .. "\n"
+            .. "class "
+            .. classname
+            .. " {\n"
+            .. " public:\n"
+            .. "  typedef std::shared_ptr<"
+            .. classname
+            .. "> Ptr;\n"
+            .. "  typedef std::shared_ptr<const "
+            .. classname
+            .. "> PtrConst;\n"
+            .. "\n"
+            .. "  "
+            .. classname
+            .. "();\n"
+            .. "  ~"
+            .. classname
+            .. "();\n"
+            .. "\n"
+            .. " private:\n"
+            .. "  $1\n"
+            .. " private:\n"
+            .. "  DISALLOW_COPY_AND_ASSIGN("
+            .. classname
+            .. ");\n"
+            .. "  $2\n"
+            .. "};\n"
+            .. "\n"
+            .. ns_close
+            .. "\n"
+            .. "\n"
+            .. "#endif // "
+            .. guard,
         },
         {
           prefix = "ccs",
-          desc   = "C++ class source",
-          body   = "#include \"" .. filename .. ".h\"\n"
-                .. "\n"
-                .. "using namespace std;\n"
-                .. "\n"
-                .. ns_open .. "\n"
-                .. "\n"
-                .. "//------------------------------------------------------------------------------\n"
-                .. classname .. "::" .. classname .. "() {\n"
-                .. "  $1\n"
-                .. "}\n"
-                .. "\n"
-                .. "//------------------------------------------------------------------------------\n"
-                .. classname .. "::~" .. classname .. "() {\n"
-                .. "  $2\n"
-                .. "}\n"
-                .. "\n"
-                .. "//------------------------------------------------------------------------------\n"
-                .. "$3\n"
-                .. "\n"
-                .. ns_close,
+          desc = "C++ class source",
+          body = '#include "'
+            .. filename
+            .. '.h"\n'
+            .. "\n"
+            .. "using namespace std;\n"
+            .. "\n"
+            .. ns_open
+            .. "\n"
+            .. "\n"
+            .. "//------------------------------------------------------------------------------\n\n"
+            .. classname
+            .. "::"
+            .. classname
+            .. "() {\n"
+            .. "  $1\n"
+            .. "}\n"
+            .. "\n"
+            .. "//------------------------------------------------------------------------------\n\n"
+            .. classname
+            .. "::~"
+            .. classname
+            .. "() {\n"
+            .. "  $2\n"
+            .. "}\n"
+            .. "\n"
+            .. "//------------------------------------------------------------------------------\n"
+            .. "$3\n"
+            .. "\n"
+            .. ns_close,
         },
       }
     end
