@@ -195,7 +195,7 @@ MacroBlockBegin: ''
 MacroBlockEnd: ''
 MainIncludeChar: Quote
 MaxEmptyLinesToKeep: 1
-NamespaceIndentation: All # Changed
+NamespaceIndentation: None
 ObjCBinPackProtocolList: Auto
 ObjCBlockIndentWidth: 2
 ObjCBreakBeforeNestedBlockParam: true
@@ -215,7 +215,7 @@ PenaltyBreakTemplateDeclaration: 10
 PenaltyExcessCharacter: 1000000
 PenaltyIndentedWhitespace: 0
 PenaltyReturnTypeOnItsOwnLine: 60
-PointerAlignment: Left # Changed
+PointerAlignment: Right
 PPIndentWidth: -1
 QualifierAlignment: Leave
 ReferenceAlignment: Pointer
