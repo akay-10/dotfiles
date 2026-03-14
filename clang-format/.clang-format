@@ -130,8 +130,8 @@ BreakTemplateDeclarations: MultiLine
 ColumnLimit: 80
 CommentPragmas: '^ IWYU pragma:'
 CompactNamespaces: false
-ConstructorInitializerIndentWidth: 4
-ContinuationIndentWidth: 4
+ConstructorInitializerIndentWidth: 2 # Changed
+ContinuationIndentWidth: 2 # Changed
 Cpp11BracedListStyle: true
 DerivePointerAlignment: false
 DisableFormat: false
